@@ -19,7 +19,7 @@ services:
 
   redis:  
     hostname: redis
-    image: redis:5.0.4
+    image: redis:5.0.1
     container_name: redis
     restart: always
     command: redis-server /etc/redis.conf # 启动redis命令
