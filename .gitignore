@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+.idea
+.ipynb_checkpoints
+venv
+*/data
+*/*/data
+__pycache__
