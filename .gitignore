@@ -7,5 +7,5 @@ venv
 !ldap_compose/data
 __pycache__
 .DS_Store
-ldap_compose/data/LdapConfig/*
-ldap_compose/data/ldapdb/*
+#ldap_compose/data/LdapConfig/*
+#ldap_compose/data/ldapdb/*
