@@ -3,10 +3,10 @@
 .ipynb_checkpoints
 venv
 
-#mysql_redis_rabbitmq_compose/mysql/data
+mysql_redis_rabbitmq_compose/mysql/data
 !mysql_redis_rabbitmq_compose/mysql/data/dre
 
-#mysql_redis_rabbitmq_compose/redis/data
+mysql_redis_rabbitmq_compose/redis/data
 !mysql_redis_rabbitmq_compose/redis/data/dre
 
 
