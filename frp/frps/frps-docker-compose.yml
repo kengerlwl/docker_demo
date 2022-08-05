@@ -3,14 +3,28 @@ services:
 
   frps:
     image: snowdreamtech/frps
-    ports:
-      - "17000:7000" # bind口
-      - "17500:7500" # 面板口
-      - "10022:10022" #用于ssh连接
-      - "10080:10080" #用于开放给外网访问1
-      - "10081:10081" #用于开放给外网访问2
-      - "10082:10082" #用于开放给外网访问3
-      # 更多端口根据实际需求增加
+    network_mode: host
     volumes:
       - ./frps.ini:/etc/frp/frps.ini
     container_name: frps
+
+
+# 固定的端口映射
+#version: '3'
+#services:
+#
+#  frps:
+#    image: snowdreamtech/frps
+#    ports:
+#      - "17000:7000" # bind口
+#      - "17500:7500" # 面板口
+#      - "10022:10022" #用于ssh连接
+#      - "10080:10080" #用于开放给外网访问1
+#      - "10081:10081" #用于开放给外网访问2
+#      - "10082:10082" #用于开放给外网访问3
+#      # 更多端口根据实际需求增加
+#    volumes:
+#      - ./frps.ini:/etc/frp/frps.ini
+#    container_name: frps
+#
+
