@@ -4,7 +4,7 @@ services:
     image: snowdreamtech/frpc
     volumes:
       - ./frpc.ini:/etc/frp/frpc.ini
-    container_name: frpc
+    container_name: frpc_lwl
 
     ports:
       - 10001:10001
