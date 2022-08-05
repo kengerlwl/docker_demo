@@ -6,7 +6,7 @@ services:
       - ./frpc.ini:/etc/frp/frpc.ini
     container_name: frpc_lwl
 
-    ports:
-      - 10001:10001
-#      - 10000-10100:10000-10100
+#    ports:
+#      - 10001:10001
+##      - 10000-10100:10000-10100
     network_mode: host
