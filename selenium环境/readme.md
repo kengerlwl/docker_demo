@@ -19,3 +19,12 @@ https://hub.docker.com/r/selenium/node-chrome-debug
 
 根据selenium-hub开放的端口连接进取
 
+# selenium使用翻墙代理
+
+用到了一个叫作proxy的类
+
+
+# vnc
+
+chrome vnc 的密码： secret
+
