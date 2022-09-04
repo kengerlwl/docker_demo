@@ -1,5 +1,5 @@
 # docker-compose版本
-version: '3.7'
+version: '3'
 # 服务列表
 services:
     # clash后台服务
