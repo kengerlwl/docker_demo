@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rclone:
+    container_name: rclone_onedrive
+    image: rclone/rclone
+    volumes:
+      - ./conf:/config/rclone
+      - ./data:/data
+#      - ./main.sh:/main.sh
+    command:
+    privileged: true
+#    restart: unless-stopped
