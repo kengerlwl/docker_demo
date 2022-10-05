@@ -9,7 +9,17 @@ docker-compose -f docker-compose.yml up -d
 
 
 
-# mysql 
+# docker run 启动mysql
+
+```
+docker run --name=mysql_lwl -v /data/DataLACP/liuwenlong:/tmp/test -it -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql/mysql-server:5.7.26 /bin/bash
+```
+
+
+
+
+
+# mysql
 
 宿主主机不能访问问题。
 
