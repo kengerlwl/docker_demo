@@ -1,0 +1,27 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+
+  "inbounds": [
+    {
+      "port": 51223, // 服务器监听端口
+      "protocol": "vmess",    // 主传入协议
+      "settings": {
+        "clients": [
+          {
+            "id": "8FF6627C-C247-44EB-A9AA-A7EAB8385D4A",  // 用户 ID，客户端与服务器必须相同
+            "alterId": 0
+          }
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",  // 主传出协议
+      "settings": {}
+    }
+  ]
+}
+
