@@ -1,3 +1,15 @@
+# build
+- docker build -t ubuntu:v1 .
+- docker run -d -p 51022:22 -v $PWD/data:/data ubuntu:v1
+
+
+# 一个注意点
+
+只能这么写
+CMD ["/usr/sbin/sshd", "-D"]
+不能
+CMD ["/usr/sbin/sshd -D"]
+
 # nginx
 ```
 apt-get install nginx

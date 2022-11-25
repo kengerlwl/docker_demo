@@ -1,0 +1,17 @@
+version: '2'
+services:
+    nextcloud:
+        image: nextcloud
+        container_name: nextcloud
+        restart: always
+        ports:
+            - 8087:80
+        volumes:
+            - ./data:/var/www/html
+        command: /bin/sh /entrypoint.sh apache2-foreground
+    draw:
+        image: fjudith/draw.io
+        container_name: draw
+        restart: always
+        ports:
+            - 8080:8080
