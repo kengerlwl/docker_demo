@@ -26,7 +26,14 @@ docker run --name=mysql_lwl -v /data/DataLACP/liuwenlong:/tmp/test -it -p 3306:3
 **进入mysql**
 
 ```
+# 以root权限登录
 mysql -u root -p 
+
+# 以普通用户登录，例如用户kenger
+mysql -u kenger -p
+关键来了，由于权限分离，导致普通用户是不能看到root用户的表的
+
+
 ```
 
 
