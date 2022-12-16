@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+   wordpress:
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     restart: always
+
+     # 设置mysql数据库
+     environment:
+       WORDPRESS_DB_HOST: host:3306
+       WORDPRESS_DB_USER: root
+       WORDPRESS_DB_PASSWORD: 156354
+       WORDPRESS_DB_NAME: wordpress

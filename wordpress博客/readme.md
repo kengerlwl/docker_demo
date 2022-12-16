@@ -1,0 +1,4 @@
+# 注意
+因为是在docker中安装的wordpress
+所以在填写数据库host的时候不能填localhost。
+要填内网ip或者对于服务器公网ip

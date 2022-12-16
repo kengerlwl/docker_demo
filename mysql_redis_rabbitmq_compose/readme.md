@@ -46,11 +46,16 @@ mysql -u kenger -p
 
 
 
-如何新建用户并新增权限
+如何新建用户并新增权限，以及新建数据库
 
 ```
 # user:kenger
 # pwd:156354
+
+# 新建数据库
+CREATE DATABASE 数据库名;
+
+
 #创建账户
 create user 'kenger'@'%' identified by '156354';
 
