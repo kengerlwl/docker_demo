@@ -2,26 +2,18 @@ version: '3'
 services:
   mysql:
     hostname: mysql
-    image: mysql/mysql-server:5.7.26
+    image: mysql/mysql-server:5.7.18
     # network_mode: "host" # 如果需要容器使用宿主机IP(内网IP)，则可以配置此项,默认桥接模式
     container_name: mysql # 指定容器名称，如果不设置此参数，则由系统自动生成
-    restart: always # 设置容器自启模式
-    # command:
-    #   - sh
-    #   - -c
-    #   - |
-    #     mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci # 设置utf8字符集
-    #     mysql -u root -p update mysql.user set host='%' where user='root' and host = 'localhost'; flush privileges; # 设置访问权限
+    restart: always # 设置容器自启模
 
     environment:
       - TZ=Asia/Shanghai # 设置容器时区与宿主机保持一致
-      - MYSQL_ROOT_PASSWORD=123456 # 设置root密码
-      - MYSQL_DATABASE=test_db
-      - MYSQL_USER=test
-      - MYSQL_PASSWORD=123456 # 设置mysql密码
-      - MYSQL_ROOT_HOST='%'  # needs to be enclosed with quotes
+      - MYSQL_ROOT_PASSWORD=156354 # 设置root密码
+      - MYSQL_DATABASE=mysql_kenger # 新建的数据库名字
+      - MYSQL_USER=kenger  # 新的用户名字
+      - MYSQL_PASSWORD=156354 # 设置用户的密码
     volumes:
-       - /etc/localtime:/etc/localtime:ro # 设置容器时区与宿主机保持一致
        - ./mysql/data:/var/lib/mysql/data # 映射数据库保存目录到宿主机，防止数据丢失
        - ./mysql/my.cnf:/etc/mysql/my.cnf # 映射数据库配置文件
     ports:
