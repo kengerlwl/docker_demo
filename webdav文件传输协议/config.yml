@@ -1,7 +1,7 @@
 version: '3'
 services:
   webdav:
-    image: dmorrisjobke/webdav
+    image: morrisjobke/webdav
     restart: always
     ports:
       - "8889:80"
@@ -10,4 +10,4 @@ services:
       USERNAME: kenger
       PASSWORD: 156354
     volumes:
-      - ./data:/var/webda
+      - ./data:/var/webdav
