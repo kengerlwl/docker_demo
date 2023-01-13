@@ -2,16 +2,17 @@
   "log": {
     "loglevel": "info"
   },
-
   "inbounds": [
     {
-      "port": 51223, // 服务器监听端口
-      "protocol": "vmess",    // 主传入协议
+      "listen": "0.0.0.0",
+      "port": 8888,
+      "protocol": "vmess",
       "settings": {
         "clients": [
           {
-            "id": "8FF6627C-C247-44EB-A9AA-A7EAB8385D4A",  // 用户 ID，客户端与服务器必须相同
-            "alterId": 0
+            "id": "8FF6627C-C247-44EB-A9AA-A7EAB8385D4A",
+            "alterId": 0,
+            "security": "auto"
           }
         ]
       }
@@ -19,9 +20,43 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom",  // 主传出协议
-      "settings": {}
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "none"
+        }
+      },
+      "tag": "block"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "proxy"
     }
-  ]
-}
+  ],
 
+  // 设置外出的域名限制，只有这些域名能够走代理
+  "routing": {
+    "domainStrategy": "AsIs",
+    "domainMatcher": "mph",
+    "rules": [
+      {
+        "domainMatcher": "mph",
+        "type": "field",
+        "outboundTag": "proxy",
+        "domain": [
+          "cp.cloudflare.com",
+          "domain:gstatic.com",
+          "domain:csuoss.cn",
+          "domain:csubot.cn",
+          "domain:csu.edu.cn",
+          "domain:sciencedirect.com",
+          "domain:springer.com",
+          "domain:cnki.net",
+          "domain:ieee.org",
+          "domain:acm.org"
+        ]
+      }
+    ]
+  }
+}
