@@ -1,0 +1,45 @@
+{
+    "log": {
+      "loglevel": "warning",
+      "access": "/var/log/v2ray/access.log",
+      "error": "/var/log/v2ray/error.log"
+     },
+    "inbounds": [{
+      "port": 52333,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "6a94054f-27be-5b86-dbce-b8c1443988e5", // 可以使用/usr/bin/v2ray/v2ctl uuid生成
+            "level": 1,
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {     // 载体配置段，设置为websocket
+          "network": "ws",
+          "wsSettings": {
+            "path": "/vpath"  // 与nginx中的路径保持一致
+          }
+        },
+      "listen": "127.0.0.1" // 出于安全考虑，建议只接受本地链接
+    }],
+    "outbounds": [{
+      "protocol": "freedom",
+      "settings": {}
+    },{
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }],
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "ip": ["geoip:private"],
+          "outboundTag": "blocked"
+        }
+      ]
+    }
+  }
+  
