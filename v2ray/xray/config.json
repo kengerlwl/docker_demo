@@ -1,0 +1,79 @@
+{
+  "inbound":  
+    {
+      "port": 443,
+      "listen":"0.0.0.0",
+      "protocol": "vless",
+      "tag":"VLESSTCP",
+      "settings": {
+        "clients": [
+          {
+            "id": "6a94054f-27be-5b86-dbce-b8c1443988e5", //需修改UUID
+            "add": "",
+            "flow":"xtls-rprx-direct",
+            "email": "xray@xtls.com"
+          }
+        ],
+        "decryption": "none",
+        "fallbacks": [
+            {"dest":80,"xver":0}
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "minVersion": "1.2",
+           "xtlsSettings": {
+          "alpn": [
+            "http/1.1",
+        "h2"
+          ],
+    "cipherSuites":"TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "preferServerCipherSuites": true,
+        "certificates": [
+            {
+              "certificateFile": "/etc/xray/fullchain.cer", //证书存放的路径
+              "keyFile": "/etc/xray/private.key", //密钥存放的路径
+              "ocspStapling":86400
+            }
+          ]
+        }
+      }
+    },
+    "outbounds":[
+    {
+      "protocol":"freedom",
+      "settings":{},
+      "tag":"direct"
+    },
+    {
+      "protocol":"blackhole",
+      "settings":{},
+      "tag":"adblock"
+    }
+  ],
+  "routing":{
+    "domainStrategy":"IPOnDemand",
+    "rules":[
+      {
+        "domain":[
+          "googleadsserving.com"
+        ],
+        "type":"field",
+        "outboundTag":"adblock"
+      },
+      {
+        "type":"field",
+        "outboundTag":"direct",
+        "domain":["geosite:cn"]
+      },
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "protocol": [
+          "bittorrent"
+        ]
+      }
+    ] 
+  }
+}
