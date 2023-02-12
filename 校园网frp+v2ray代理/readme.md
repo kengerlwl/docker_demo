@@ -15,7 +15,7 @@ docker rm ${docker_name}
 docker run -it \
     --name ${docker_name} \
     -v $PWD/config/config.json:/etc/v2ray/config.json \
-    -p 51223:51223 \
+    -p 52333:52333 \
     v2fly/v2fly-core:v4.31.0
 ```
 

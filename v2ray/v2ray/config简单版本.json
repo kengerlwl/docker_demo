@@ -1,0 +1,35 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 52333,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "8FF6627C-C247-44EB-A9AA-A7EAB8385D4A",
+            "alterId": 0,
+            "security": "auto"
+          }
+        ]
+      },
+      "streamSettings": {     // 载体配置段，设置为websocket
+      "network": "ws",
+      "wsSettings": {
+        "path": "/vpath"  // 与nginx中的路径保持一致
+      }
+      
+    }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "proxy"
+    }
+  ]
+}
