@@ -12,9 +12,9 @@
 docker_name="v2ray-proxy"
 docker stop ${docker_name}
 docker rm ${docker_name}
-docker run -it \
+docker run -d \
     --name ${docker_name} \
-    -v $PWD/config/config.json:/etc/v2ray/config.json \
+    -v $PWD/config.json:/etc/v2ray/config.json \
     -p 52333:52333 \
     v2fly/v2fly-core:v4.31.0
 ```

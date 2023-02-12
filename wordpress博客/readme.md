@@ -5,6 +5,16 @@
 
 
 
+
+
+# 命令
+
+```
+docker run -d --name wordpress -p 8000:80 --restart always -v $PWD/wordpress:/var/www/html  wordpress:latest
+```
+
+
+
 # wordpress的设置!!!
 
 注意：该ip站点url配置是在mysql数据库里面
