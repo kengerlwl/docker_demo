@@ -1,0 +1,13 @@
+{
+    "$schema": "https://ddns.newfuture.cc/schema/v2.8.json",
+    "id": "12345",
+    "token": "mytokenkey",
+    "dns": "dnspod 或 dnspod_com 或 alidns 或 dnscom 或 cloudflare 或 he 或 huaweidns 或 callback",
+    "ipv4": ["ddns.newfuture.cc", "ipv4.ddns.newfuture.cc"],
+    "ipv6": ["ddns.newfuture.cc", "ipv6.ddns.newfuture.cc"],
+    "index4": 0,
+    "index6": "public",
+    "ttl": 600,
+    "proxy": "127.0.0.1:1080;DIRECT",
+    "debug": false
+  }
