@@ -10,6 +10,8 @@ docker run -d \
   newfuture/ddns
 ```
 
+由于ddns的容器内比较精简，所以没有curl等命令。
+这点要注意，如果是编写的脚步。可能得自己Dockerfile编译容器。
 
 
 

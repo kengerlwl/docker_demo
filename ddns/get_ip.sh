@@ -1,1 +1,2 @@
-curl -s https://portal.csu.edu.cn/drcom/chkstatus\?callback\=dr1002\&jsVersion\=4.X\&v\=1739\&lang\=zh | grep -oE 'v46ip":"[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | sed 's/v46ip":"//'
+curl --interface 192.168.1.209 -s https://portal.csu.edu.cn/drcom/chkstatus\?callback\=dr1002\&jsVersion\=4.X\&v\=1739\&lang\=zh | grep -oE 'v46ip":"[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | sed 's/v46ip":"//'
+# 使用本地ip 192.168.1.209
