@@ -13,9 +13,9 @@ services:
       - "636:636"
     environment:
       - TZ=Asia/Shanghai
-      - LDAP_ORGANISATION=lwl
+      - LDAP_ORGANISATION=kenger
       - LDAP_DOMAIN=kenger.top
-      - LDAP_ADMIN_PASSWORD=WKcqDgd8k5WgF2Xp2koj
+      - LDAP_ADMIN_PASSWORD=xxx
       - LDAP_TLS_CRT_FILENAME=ldap.crt
       - LDAP_TLS_KEY_FILENAME=ldap.key
       - LDAP_TLS_CA_CRT_FILENAME=ca.crt

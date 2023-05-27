@@ -22,12 +22,11 @@ services:
 
   ldap-admin:
 
-    image: osixia/phpldapadmin:latest
+    image: ldapaccountmanager/lam:stable
 
     container_name: phpldapadmin
-    environment:
-      - PHPLDAPADMIN_LDAP_HOSTS=openldap # 这个是另一个容器的名字
-      - PHPLDAPADMIN_HTTPS=false
+    # environment:
+    #   - LAM_SKIP_PRECONFIGURE=false
     ports:
       - "8081:80"
     restart: unless-stopped
