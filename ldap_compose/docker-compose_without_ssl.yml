@@ -28,5 +28,7 @@ services:
     # environment:
     #   - LAM_SKIP_PRECONFIGURE=false
     ports:
-      - "8081:80"
+      - "8082:80"
+    volumes:
+      - ./data/ldapAdminDb:/var/lib/ldap
     restart: unless-stopped
