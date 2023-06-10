@@ -19,7 +19,7 @@ services:
       - LDAP_TLS_CRT_FILENAME=ldap.crt
       - LDAP_TLS_KEY_FILENAME=ldap.key
       - LDAP_TLS_CA_CRT_FILENAME=ca.crt
-      - LDAP_TLS_VERIFY_CLIENT=try
+      # - LDAP_TLS_VERIFY_CLIENT=try
     volumes:
       - ./data/ldapdb:/var/lib/ldap
       - ./data/local/ldap:/usr/local/ldap 

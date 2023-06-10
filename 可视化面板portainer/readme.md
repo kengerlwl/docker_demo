@@ -1,5 +1,6 @@
 # 命令
 docker run -d -p 8090:9000 \
+--name=portainer_admin \
 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=true  portainer/portainer
 
 

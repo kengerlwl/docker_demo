@@ -20,3 +20,5 @@ gocqhttp/gocqhttp_data/data/leveldb-v2/LOG
 gocqhttp/gocqhttp_data/*
 ddns/config.json
 ldap_compose/data/*
+!healthchecks/data/readme.md
+healthchecks/data/*
