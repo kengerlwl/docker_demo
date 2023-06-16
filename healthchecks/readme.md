@@ -35,3 +35,10 @@ services:
       - 2525:2525 #optional
     restart: unless-stopped
 ```
+
+# 注意：这个管理员密码对强密码支持性不太好，我输入太长的长密码，直接不work，就是登录不了
+
+# 使用
+Mychecks侦听来自您的 cron 作业和计划任务的 HTTP 请求（“ping”）。
+只要 ping 准时到达，它就会保持沉默。
+一旦 ping 未按时到达，它就会发出警报。
