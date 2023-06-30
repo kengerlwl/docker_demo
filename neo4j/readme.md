@@ -1,6 +1,6 @@
 # neo4j
 ```
-docker run -d --name neo4j_csy -p 17474:7474 -p 17687:7687 -v $PWD/data:/data -v $PWD/logs:/logs -v $PWD/conf:/var/lib/neo4j/conf -v $PWD/import:/var/lib/neo4j/import --env NEO4J_AUTH=neo4j/password neo4j
+docker run -d --name neo4j_lwl -p 17474:7474 -p 17687:7687 -v $PWD/data:/data -v $PWD/logs:/logs -v $PWD/conf:/var/lib/neo4j/conf -v $PWD/import:/var/lib/neo4j/import --env NEO4J_AUTH=neo4j/password neo4j
 ```
 
 
