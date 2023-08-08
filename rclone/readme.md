@@ -7,7 +7,7 @@ docker run -d --name=rclonebrowser \
 --security-opt apparmor=unconfined \
 -p 5801:5800 \
 -p 5901:5900 \
--v /volume1/docker/rclone/config:/config \
+-v $PWD/conf:/config \
 -v /volume1/docker/rclone/media:/media:shared \
 -e GROUP_ID=0 \
 -e USER_ID=0 \

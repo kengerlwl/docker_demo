@@ -66,3 +66,13 @@ grant all privileges on *.* to 'kenger'@'%' with grant option;
 flush privileges;
 ```
 
+
+更改root用户的登录域名限制
+```
+DROP USER 'root'@'%'; # 可以有多个root用户，host不一样，要注意修改host
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'WKcqDgd8k5WgF2Xp2koj';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+update mysql.user set host='%' where user='root' and host = 'localhost'; flush privileges; # 设置访问权限
+FLUSH PRIVILEGES;
+
+```
