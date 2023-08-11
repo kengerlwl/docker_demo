@@ -76,3 +76,23 @@ update mysql.user set host='%' where user='root' and host = 'localhost'; flush p
 FLUSH PRIVILEGES;
 
 ```
+
+
+
+# rabbitmq
+必须要有guest用户
+
+只有一个guest用户，RabbitMQ官方只允许本机使用guest访问，所以我通过虚拟机连接的当然访问不了，添加一个用户即可
+
+ 
+```
+root@my-Rabbit:/# rabbitmqctl add_user admin 123456
+Adding user "admin" ...
+Done. Don't forget to grant the user permissions to some virtual hosts! See 'rabbitmqctl help set_permissions' to learn more.
+root@my-Rabbit:/# rabbitmqctl set_user_tags admin administrator
+Setting tags for user "admin" to [administrator] ...
+root@my-Rabbit:/#
+```
+ 
+
+然后再web页面用admin登录
