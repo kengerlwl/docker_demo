@@ -8,6 +8,7 @@ docker run --name kenger_zerotier -d \
 --cap-add=SYS_ADMIN \
 --net=host \
 --device /dev/net/tun \
+-v $PWD/zerotier-one:/var/lib/zerotier-one \
 zerotier/zerotier:latest xxx
 
 ```
@@ -22,6 +23,7 @@ docker run --name kenger_zerotier -it \
 --cap-add=SYS_ADMIN \
 --net=host \
 --device /dev/net/tun \
+-v $PWD/zerotier-one:/var/lib/zerotier-one \
 zerotier/zerotier:latest bash
 
 ```
