@@ -15,21 +15,47 @@
             "security": "auto"
           }
         ]
-      },
-      "streamSettings": {     // 载体配置段，设置为websocket
-      "network": "ws"
-      // "wsSettings": {
-      //   "path": "/vpath/"  // 与nginx中的路径保持一致
-      // }
-      
-    }
+      }
     }
   ],
   "outbounds": [
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "none"
+        }
+      },
+      "tag": "block"
+    },
     {
       "protocol": "freedom",
       "settings": {},
       "tag": "proxy"
     }
-  ]
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "domainMatcher": "mph",
+    "rules": [
+      {
+        "domainMatcher": "mph",
+        "type": "field",
+        "outboundTag": "proxy",
+        "domain": [
+          "com",
+          "cn",
+          "xyz",
+          "work",
+          ""
+        ]
+      },
+      {
+        "domainMatcher": "mph",
+        "type": "field",
+        "outboundTag": "proxy",
+        "ip": ["0.0.0.0/0"]
+      }
+    ]
+  }
 }
