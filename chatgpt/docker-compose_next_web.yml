@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  chatgpt-next-web: 
+    profiles: ["no-proxy"]
+    container_name: chatgpt-next-web
+    image: yidadaa/chatgpt-next-web
+    ports:
+      - 3000:3000
+    environment:
+      - OPENAI_API_KEY=sk-5aZWtniFibjIru2H2f65596216314f97Aa9c6a54Cf6aA93f
+      - BASE_URL=https://api.132999.xyz
