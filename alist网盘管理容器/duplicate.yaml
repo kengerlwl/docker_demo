@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backup:
+    image: lscr.io/linuxserver/duplicati:latest
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+    ports:
+      - 8200:8200
+    volumes:
+      - /root:/source/root  # 挂载整个 /root 目录
+      - /etc:/source/etc    # 挂载整个 /etc 目录
+      - ./duplicati/config:/config  # 挂载配置文件目录
+      - ./duplicati/backups:/backups  # 挂载备份文件目录
+      - /mnt/webdav:/backups_webdav
+    restart: unless-stopped
