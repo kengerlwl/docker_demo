@@ -1,7 +1,7 @@
 version: '3'
 services:
   frpc:
-    image: snowdreamtech/frpc
+    image: snowdreamtech/frpc:0.48.0
     volumes:
       - ./frpc.ini:/etc/frp/frpc.ini
     container_name: frpc_lwl
