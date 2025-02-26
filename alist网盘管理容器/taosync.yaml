@@ -1,0 +1,9 @@
+version: "3"
+services:
+  sync:
+    image: dr34m/tao-sync:latest
+    container_name: taosync
+    restart: always 
+    network_mode: "host"
+    volumes:
+       - /mnt/taoPan:/app/data

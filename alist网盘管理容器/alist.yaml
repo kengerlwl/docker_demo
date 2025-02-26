@@ -4,6 +4,8 @@ services:
         restart: always
         volumes:
             - './alist:/opt/alist/data'
+            - '/mnt/alistPan:/mnt/alistPan'
+            - '/home/kenger:/home/kenger'
         ports:
             - '5244:5244'
         environment:
